@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Combustíveis — Faz o check, vem pra Quality</title>
+  <meta name="description" content="Quality Combustíveis em Brasília. Petrobras Podium Carbono Neutro, Gasolina, Etanol, Diesel S10. Encontre o posto mais próximo.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="https://www.instagram.com/quality_combustiveis?igsh=MTRvNGY5OW00YThxcQ==" target="_blank">Instagram</a>
+  <a href="https://www.tiktok.com/@quality_combustiveis?_r=1&_t=ZS-97X9r1KKlwD" target="_blank">TikTok</a>
+  <a href="https://wa.me/5561999999999" target="_blank">WhatsApp</a>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="img/logo.svg" alt="Quality Combustíveis">
+  </a>
+  <ul class="nav-links">
+    <li>
+      <a href="#">Combustíveis ▾</a>
+      <div class="dropdown">
+        <a href="https://nossaenergia.petrobras.com.br/w/transicao-energetica/podium-gasolina-carbono-neutro" target="_blank">Petrobras Podium Carbono Neutro</a>
+        <a href="https://www.shell.com.br/blog/comum-ou-aditivado-descubra-as-diferencas-e-beneficios-de-cada-um.html" target="_blank">Gasolina Aditivada</a>
+        <a href="https://nossaenergia.petrobras.com.br/w/nossas-atividades/especificacoes-da-gasolina" target="_blank">Gasolina Comum</a>
+        <a href="https://unica.com.br/setor-sucroenergetico/etanol/" target="_blank">Etanol</a>
+        <a href="https://petrobras.com.br/quem-somos/oleo-diesel" target="_blank">Diesel S10</a>
+        <a href="https://www.postospetrobras.com.br/abasteca-com/diesel-petrobras-grid" target="_blank">Diesel Aditivado</a>
+      </div>
+    </li>
+    <li>
+      <a href="#">Postos ▾</a>
+      <div class="dropdown">
+        <a href="#">Encontrar Posto</a>
+        <a href="#">Posto Iate Clube de Brasília</a>
+        <a href="#">Rede Quality no DF</a>
+      </div>
+    </li>
+    <li>
+      <a href="#">Para Empresas ▾</a>
+      <div class="dropdown">
+        <a href="#">Plano Faturado</a>
+        <a href="#">Pagamento a Prazo</a>
+        <a href="#">Sistema de Gestão Gratuito</a>
+        <a href="#">Falar com Consultor</a>
+      </div>
+    </li>
+    <li>
+      <a href="#">A Quality ▾</a>
+      <div class="dropdown">
+        <a href="#">Sobre Nós</a>
+        <a href="#">Responsabilidade Social</a>
+        <a href="#">Campanhas</a>
+        <a href="#">Trabalhe Conosco</a>
+      </div>
+    </li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+  <a href="#postos" class="nav-cta">📍 Encontrar Posto</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-chevrons">
+    <div class="chev chev-1"></div>
+    <div class="chev chev-2"></div>
+    <div class="chev chev-3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-tag">✔ Faz o check, vem pra Quality</span>
+      <h1>
+        Qualidade que move
+        <span class="destaque">Brasília.</span>
+      </h1>
+      <p class="hero-sub">
+        Combustível de confiança, atendimento personalizado, e o melhor preço do DF.
+        Petrobras Podium Carbono Neutro exclusivo na nossa rede.
+      </p>
+      <div class="hero-actions">
+        <a href="#postos" class="btn btn-laranja">📍 Encontrar Posto</a>
+        <a href="#combustiveis" class="btn btn-ghost">Nossos combustíveis →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">DF</span>
+          <span class="stat-desc">Postos espalhados por toda Brasília</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Todos os dias</span>
+          <span class="stat-desc">Postos abertos</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Petrobras</span>
+          <span class="stat-desc">Podium Carbono Neutro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARROSSEL STORIES -->
+<div class="stories-wrap">
+  <button class="stories-nav stories-prev" id="storiesPrev" aria-label="Anterior">&#8249;</button>
+  <div class="stories-viewport">
+    <div class="stories-track" id="storiesTrack">
+      <div class="story-card" style="background:linear-gradient(145deg,#281A4E,#3D2870);">
+        <div class="story-inner">
+          <span class="story-tag">✔ Exclusivo Quality</span>
+          <h3>Petrobras Podium<br><em>Carbono Neutro</em></h3>
+          <p>O único combustível carbono neutro do Brasil. Exclusivo e inovador na nossa rede.</p>
+          <a href="#combustiveis" class="story-btn">Saiba mais →</a>
+        </div>
+        <div class="story-deco">🏆</div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(145deg,#c45e00,#E87914);">
+        <div class="story-inner">
+          <span class="story-tag">❄️ Campanha do Agasalho</span>
+          <h3>Sua doação pode<br><em>aquecer uma vida.</em></h3>
+          <p>Nossos postos são pontos de recolhimento de casacos, cobertores e roupas de frio.</p>
+          <a href="#" class="story-btn">Doe aqui →</a>
+        </div>
+        <div class="story-deco">🧥</div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(145deg,#0d3b6b,#1a5a9e);">
+        <div class="story-inner">
+          <span class="story-tag">⚓ Nova Parceria</span>
+          <h3>Quality +<br><em>Iate Clube de Brasília</em></h3>
+          <p>Abastecimento com qualidade Quality. Faz o check no lago também.</p>
+          <a href="#postos" class="story-btn">Ver no mapa →</a>
+        </div>
+        <div class="story-deco">⛵</div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(145deg,#1a1a2e,#281A4E);">
+        <div class="story-inner">
+          <span class="story-tag">🚛 Para Empresas</span>
+          <h3>Mais controle.<br><em>Menos custo.</em></h3>
+          <p>Plano faturado, pagamento a prazo e sistema de gestão gratuito para sua frota.</p>
+          <a href="#" class="story-btn">Quero ser parceiro →</a>
+        </div>
+        <div class="story-deco">📊</div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(145deg,#3D2870,#E87914);">
+        <div class="story-inner">
+          <span class="story-tag">❤️ Dia dos Namorados</span>
+          <h3>O amor está<br><em>no caminho.</em></h3>
+          <p>Tem encontros que mudam tudo. Todo grande momento começa com uma jornada.</p>
+          <a href="#" class="story-btn">Vem pra Quality →</a>
+        </div>
+        <div class="story-deco">❤️</div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(145deg,#2a2000,#5a4800);">
+        <div class="story-inner">
+          <span class="story-tag">🚦 Maio Amarelo</span>
+          <h3>Todo trajeto tem<br><em>alguém esperando.</em></h3>
+          <p>No trânsito, a melhor direção é a consciência. Cuide da sua direção. Preserve vidas.</p>
+          <a href="#" class="story-btn">Saiba mais →</a>
+        </div>
+        <div class="story-deco">🎗️</div>
+      </div>
+    </div>
+  </div>
+  <button class="stories-nav stories-next" id="storiesNext" aria-label="Próximo">&#8250;</button>
+  <div class="stories-dots" id="storiesDots">
+    <span class="sdot active"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+    <span class="sdot"></span>
+  </div>
+</div>
+
+<!-- FAIXA -->
+<div class="faixa">
+  <div class="faixa-item"><span>✔ Petrobras Podium Carbono Neutro</span></div>
+  <div class="faixa-item"><span>· Gasolina Aditivada</span></div>
+  <div class="faixa-item"><span>· Diesel S10</span></div>
+  <div class="faixa-item"><span>· Etanol</span></div>
+  <div class="faixa-item"><span>· Posto Iate Clube de Brasília</span></div>
+  <div class="faixa-item"><span>· Plano Faturado para Empresas</span></div>
+  <div class="faixa-item"><span>· Sistema de Gestão Gratuito</span></div>
+</div>
+
+<!-- COMBUSTÍVEIS -->
+<section class="secao combustiveis" id="combustiveis">
+  <div class="comb-topo">
+    <div>
+      <p class="label-secao">Nossos Produtos</p>
+      <h2 class="titulo-secao">Combustíveis Quality</h2>
+      <p class="sub-secao">Da linha Petrobras ao etanol, tudo com procedência, qualidade testada e preço justo no DF.</p>
+    </div>
+  </div>
+  <div class="comb-grid">
+    <div class="comb-card podium">
+      <span class="comb-num">01</span>
+      <span class="comb-badge-exclusivo">⭐ Exclusivo</span>
+      <span class="comb-emoji">🏆</span>
+      <h3>Petrobras Podium<br>Carbono Neutro</h3>
+      <p>O único combustível carbono neutro do Brasil, exclusivo e inovador. Alta octanagem, máxima performance e responsabilidade ambiental.</p>
+      <a href="#" class="comb-link">Saiba mais →</a>
+    </div>
+    <div class="comb-card gasolina">
+      <span class="comb-num">02</span>
+      <span class="comb-emoji">⛽</span>
+      <h3>Gasolina Aditivada</h3>
+      <p>Fórmula com aditivos que limpam o motor e melhoram a combustão. Mais km rodados a cada tanque.</p>
+      <a href="#" class="comb-link">Saiba mais →</a>
+    </div>
+    <div class="comb-card etanol">
+      <span class="comb-num">03</span>
+      <span class="comb-emoji">🌿</span>
+      <h3>Etanol</h3>
+      <p>Combustível renovável com alto índice de octanagem. Economia real e boa performance no dia a dia.</p>
+      <a href="#" class="comb-link">Saiba mais →</a>
+    </div>
+    <div class="comb-card diesel">
+      <span class="comb-num">04</span>
+      <span class="comb-emoji">🚛</span>
+      <h3>Diesel S10</h3>
+      <p>Baixíssimo teor de enxofre para motores modernos. Menos emissão, mais potência, mais durabilidade.</p>
+      <a href="#" class="comb-link">Saiba mais →</a>
+    </div>
+  </div>
+</section>
+
+<!-- REDE DE POSTOS -->
+<section class="secao postos-secao" id="postos">
+  <div class="postos-topo">
+    <div>
+      <p class="label-secao">Rede Quality — Brasília/DF</p>
+      <h2 class="titulo-secao">Nossas Unidades</h2>
+      <p class="sub-secao">Postos espalhados por Brasília e Entorno — e agora também no Lago, no Iate Clube de Brasília.</p>
+    </div>
+    <div class="postos-busca">
+      <input class="campo campo-busca" type="text" placeholder="Filtrar por bairro ou nome...">
+      <button class="btn btn-laranja btn-busca">🔍 Buscar</button>
+    </div>
+  </div>
+
+  <!-- Mapa interativo Leaflet -->
+  <div class="mapa-leaflet-wrap">
+    <div id="mapaPostos"></div>
+  </div>
+
+  <!-- Lista / cards dos postos -->
+  <div class="postos-lista-wrap">
+    <div class="postos-lista-header">
+      <span id="postosCount">32 postos encontrados</span>
+      <div class="postos-filtros">
+        <button class="pfiltro active" data-regiao="todos">Todos</button>
+        <button class="pfiltro" data-regiao="plano">Plano Piloto</button>
+        <button class="pfiltro" data-regiao="taguatinga">Taguatinga</button>
+        <button class="pfiltro" data-regiao="ceilandia">Ceilândia</button>
+        <button class="pfiltro" data-regiao="samambaia">Samambaia</button>
+        <button class="pfiltro" data-regiao="luziania">Luziânia</button>
+        <button class="pfiltro" data-regiao="outros">Outros</button>
+      </div>
+    </div>
+    <div class="postos-grid" id="postosGrid"></div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="secao servicos">
+  <p class="label-secao">Mais do que combustível</p>
+  <h2 class="titulo-secao">Tudo que você precisa<br>numa parada só</h2>
+  <div class="serv-grid">
+    <div class="serv-card sc-nautico">
+      <div class="serv-bg">⚓</div>
+      <div class="serv-conteudo">
+        <div class="serv-tag">Novidade · Reinauguração</div>
+        <h3>Posto Iate Clube<br>de Brasília</h3>
+        <p>Nova parceria Quality + Iate Clube de Brasília. Abastecimento com a qualidade que você já conhece no asfalto.</p>
+        <a href="#" class="serv-link">Saiba mais →</a>
+      </div>
+    </div>
+    <div class="serv-card sc-empresa">
+      <div class="serv-bg">🚛</div>
+      <div class="serv-conteudo">
+        <div class="serv-tag">Para Empresas</div>
+        <h3>Plano Faturado<br>& Gestão de Frota</h3>
+        <p>Plano faturado, pagamento a prazo e sistema gratuito de monitoramento. Mais controle, menos custo, muito mais estrada.</p>
+        <a href="#" class="serv-link">Falar com consultor →</a>
+      </div>
+    </div>
+    <div class="serv-card sc-social">
+      <div class="serv-bg">🧥</div>
+      <div class="serv-conteudo">
+        <div class="serv-tag">Responsabilidade Social</div>
+        <h3>Campanha do<br>Agasalho</h3>
+        <p>Toda a rede Quality participa. Nossos postos são pontos de recolhimento de casacos, cobertores e roupas de frio.</p>
+        <a href="#" class="serv-link">Saiba mais →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<div class="empresas">
+  <div class="emp-esq secao">
+    <p class="label-secao">Para o seu Negócio</p>
+    <h2 class="titulo-secao">Qualidade que move<br>seu negócio e gera economia.</h2>
+    <p class="sub-secao" style="margin-bottom:32px;">
+      Combustível de confiança e gestão inteligente para ir sempre mais longe.
+      <strong style="color:var(--roxo);">Economia que rende. Parceria que move.</strong>
+    </p>
+    <a href="#" class="btn btn-laranja">Quero ser parceiro Quality →</a>
+  </div>
+  <div class="emp-dir">
+    <div class="emp-item">
+      <div class="emp-icone">📅</div>
+      <div class="emp-texto">
+        <h4>Plano Faturado</h4>
+        <p>Mais controle financeiro para sua empresa, com toda praticidade.</p>
+      </div>
+    </div>
+    <div class="emp-item">
+      <div class="emp-icone">⛽</div>
+      <div class="emp-texto">
+        <h4>Pagamento a Prazo</h4>
+        <p>Pague no prazo e abasteça agora, com preço de bomba.</p>
+      </div>
+    </div>
+    <div class="emp-item">
+      <div class="emp-icone">📊</div>
+      <div class="emp-texto">
+        <h4>Sistema de Gestão Gratuito</h4>
+        <p>Monitore os gastos da frota em tempo real, de forma simples e sem custo.</p>
+      </div>
+    </div>
+    <div class="emp-item">
+      <div class="emp-icone">🤝</div>
+      <div class="emp-texto">
+        <h4>Atendimento Especializado</h4>
+        <p>Um time parceiro, pronto para entender e atender você onde precisar.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="nl-texto">
+    <p class="label-secao" style="color:rgba(255,255,255,.7);">Fique por dentro</p>
+    <h2 class="titulo-secao" style="color:#fff;margin-bottom:6px;">Novidades e promoções Quality</h2>
+    <p>Receba ofertas, campanhas e novidades da rede diretamente no seu e-mail.</p>
+  </div>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="Seu melhor e-mail...">
+    <button class="nl-btn">Cadastrar →</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="ft-marca">
+      <img src="img/logo.svg" alt="Quality Combustíveis">
+      <span class="ft-slogan">Faz o check, vem pra Quality.</span>
+      <p>Rede de postos em Brasília/DF com combustíveis Petrobras, atendimento de qualidade e compromisso com a comunidade.</p>
+      <div class="sociais">
+        <a href="https://www.instagram.com/quality_combustiveis?igsh=MTRvNGY5OW00YThxcQ==" target="_blank" class="social-btn">📸</a>
+        <a href="#" class="social-btn">🎵</a>
+        <a href="https://wa.me/5561999999999" target="_blank" class="social-btn">💬</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h5>Combustíveis</h5>
+      <ul>
+        <li><a href="#">→ Petrobras Podium Carbono Neutro</a></li>
+        <li><a href="#">→ Gasolina Aditivada</a></li>
+        <li><a href="#">→ Gasolina Comum</a></li>
+        <li><a href="#">→ Etanol</a></li>
+        <li><a href="#">→ Diesel S10</a></li>
+        <li><a href="#">→ Diesel Aditivado</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Serviços</h5>
+      <ul>
+        <li><a href="#">→ Encontrar Posto no DF</a></li>
+        <li><a href="#">→ Posto Iate Clube de Brasília</a></li>
+        <li><a href="#">→ Plano Faturado Empresas</a></li>
+        <li><a href="#">→ Sistema de Gestão Gratuito</a></li>
+        <li><a href="#">→ Campanha do Agasalho</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Institucional</h5>
+      <ul>
+        <li><a href="#">→ Sobre a Quality</a></li>
+        <li><a href="#">→ Responsabilidade Social</a></li>
+        <li><a href="#">→ Trabalhe Conosco</a></li>
+        <li><a href="#">→ Campanhas e Ações</a></li>
+        <li><a href="https://wa.me/5561999999999" target="_blank">→ Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FEED INSTAGRAM -->
+  <div class="ft-insta">
+    <div class="ft-insta-header">
+      <div class="ft-insta-info">
+        <img src="img/Instagram_logo_2016.svg.png" alt="Instagram" class="ft-insta-logo">
+        <div>
+          <strong>@quality_combustiveis</strong>
+          <span>Siga a gente no Instagram</span>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/quality_combustiveis?igsh=MTRvNGY5OW00YThxcQ==" target="_blank" class="ft-insta-seguir">
+        Seguir →
+      </a>
+    </div>
+    <div class="ft-insta-grid">
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post1.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post2.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post3.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post4.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post5.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post6.jpg" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post7.webp" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post8.webp" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+      <a href="https://www.instagram.com/quality_combustiveis" target="_blank" class="ft-insta-item">
+        <img src="img/insta/post9.webp" alt="Post Quality Combustíveis">
+        <div class="ft-insta-overlay"><span>❤️</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-rodape">
+    <p>© 2026 Quality Combustíveis. Brasília/DF. Todos os direitos reservados.</p>
+    <div class="ft-links">
+      <a href="#">Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ASSISTENTE VIRTUAL QUALITY -->
+<div class="chat-bubble" id="chatBubble" title="Falar com a Quality">
+  <span class="chat-bubble-icon">✔</span>
+  <span class="chat-bubble-label">Olá! Posso ajudar?</span>
+  <span class="chat-notif" id="chatNotif">1</span>
+</div>
+
+<div class="chat-window" id="chatWindow">
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="chat-header-logo">
+      <img src="img/logo.svg" alt="Quality">
+    </div>
+    <div class="chat-header-info">
+      <strong>Quality Combustíveis</strong>
+      <span class="chat-online">● online</span>
+    </div>
+    <button class="chat-close" id="chatClose">✕</button>
+  </div>
+
+  <!-- Mensagens -->
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">
+      <div class="chat-avatar">✔</div>
+      <div class="chat-bubble-msg">
+        Olá! 👋 Seja bem-vindo à <strong>Quality Combustíveis</strong>.<br>
+        <em>Faz o check, vem pra Quality!</em>
+      </div>
+    </div>
+    <div class="chat-msg bot">
+      <div class="chat-avatar">✔</div>
+      <div class="chat-bubble-msg">
+        Escolha uma opção ou <strong>digite o que precisa</strong> 😊
+        <br><small>Para encerrar, digite <em>sair</em>.</small>
+      </div>
+    </div>
+    <div class="chat-opcoes" id="chatOpcoes">
+      <button class="chat-op" data-op="postos">📍 Encontrar Posto</button>
+      <button class="chat-op" data-op="combustiveis">⛽ Combustíveis</button>
+      <button class="chat-op" data-op="empresas">🚛 Para Empresas</button>
+      <button class="chat-op" data-op="agasalho">🧥 Campanha Agasalho</button>
+      <button class="chat-op" data-op="nautico">⚓ Posto Iate Clube</button>
+      <button class="chat-op" data-op="whatsapp">💬 Falar com Atendente</button>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="chat-footer">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem aqui">
+    <button class="chat-send" id="chatSend">➤</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/postos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
